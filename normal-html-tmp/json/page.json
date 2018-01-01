@@ -1,0 +1,22 @@
+{
+  "pages": [
+    {
+      "id": "page1",
+      "title": "ページ1のタイトル",
+      "description": "ページ1のディスクリプション",
+      "name": "inner/ringo"
+    },
+    {
+      "id": "page2",
+      "title": "ページ2のタイトル",
+      "description": "ページ2のディスクリプション",
+      "name": "inner/mikan"
+    },
+    {
+      "id": "page3",
+      "title": "ページ3のタイトル",
+      "description": "ページ3のディスクリプション",
+      "name": "inner/banana"
+    }
+  ]
+}
