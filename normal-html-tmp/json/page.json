@@ -4,19 +4,22 @@
       "id": "page1",
       "title": "ページ1のタイトル",
       "description": "ページ1のディスクリプション",
-      "name": "inner/ringo"
+      "directory": "inner/",
+      "name": "ringo"
     },
     {
       "id": "page2",
       "title": "ページ2のタイトル",
       "description": "ページ2のディスクリプション",
-      "name": "inner/mikan"
+      "directory": "inner/",
+      "name": "mikan"
     },
     {
       "id": "page3",
       "title": "ページ3のタイトル",
       "description": "ページ3のディスクリプション",
-      "name": "inner/banana"
+      "directory": "inner/",
+      "name": "banana"
     }
   ]
 }

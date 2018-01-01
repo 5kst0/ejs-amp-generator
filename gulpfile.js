@@ -22,14 +22,14 @@ gulp.task('ejs', function(){
       .pipe(ejs({
         jsonData: pages[i]
       }))
-      .pipe(rename(id + '.html'))
+      .pipe(rename(pages[i].name + '.html'))
       .pipe(gulp.dest('./html/'));
 
     gulp.src(ampFile) //AMPページの作業
     .pipe(ejs({
       jsonData: pages[i]
     }))
-    .pipe(rename(id + '_amp.html'))
+    .pipe(rename(pages[i].name + '_amp.html'))
     .pipe(ampify(amp_output))　//ここでAMPファイルに置換
     .pipe(gulp.dest(amp_output));
   }
