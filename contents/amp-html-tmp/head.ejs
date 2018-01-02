@@ -1,8 +1,37 @@
-<% var data = jsonData; %>
+<% var data = jsonData; %><% var dataAmp = ampData; %>
 <!DOCTYPE html>
 <html lang="ja">
 <head>
     <link rel="stylesheet" href="../contents/css/style.css">
     <title><%- data.title %> ｜ EJS-AMP-test</title>
     <link rel="canonical" href="/amp-html/<%- data.name %>_amp.html">
+    <script type="application/ld+json">
+    {
+        "@context": "http://schema.org",
+        "@type": "BlogPosting",
+        "mainEntityOfPage": "/amp-html/<%- data.name %>_amp.html",
+        "headline": "<%- data.title %>",
+        "datePublished": "<%- dataAmp.day %>T06:00:00+09:00",
+        "dateModified": "<%- dataAmp.day %>T06:00:00+09:00",
+        "description": "<%- data.description %>",
+          "author": {"@type": "Organization","name": "三井住友カード株式会社"},
+"publisher": {
+          "@type": "Organization",
+          "name": "企業名",
+          "logo": {
+            "@type": "ImageObject",
+            "url": "",
+                  "width": 100,
+                  "height": 50
+          }
+        },
+        "image": {
+          "@type": "ImageObject",
+          "url": "",
+          "width": 1000,
+          "height": 500
+        }
+      }
+    </script>
+
 </head>

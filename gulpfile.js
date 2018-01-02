@@ -8,11 +8,12 @@ var amp_output = './amp-html'; // AMPページの出力先
 var amp_path = './amp-html/*.html' //AMPページの元となるHTMLの格納場所
 
 gulp.task('ejs', function(){
-  var jsonFile = "./contents/json/page.json", // JSONファイルの格納先
-      tempFile = "./contents/normal-html-tmp/*.ejs", // ejsファイルの格納先（普通のHTML）
+  var tempFile = "./contents/normal-html-tmp/*.ejs", // ejsファイルの格納先（普通のHTML）
       ampFile = "./contents/amp-html-tmp/*.ejs", // ejsファイルの格納先（AMP HTML）
-      json = JSON.parse(fs.readFileSync(jsonFile)), // JSONファイル読み込み
+      json = JSON.parse(fs.readFileSync("./contents/json/page.json")), // JSONファイル読み込み
+      jsonAmp = JSON.parse(fs.readFileSync("./contents/json/ampdata.json")), // JSONファイル読み込み
       pages = json.pages,
+      ampSchema = jsonAmp.schema,
       id;
 
   for(var i = 0; i < pages.length; i++){　//jsonの要素数だけページ生成
@@ -27,7 +28,7 @@ gulp.task('ejs', function(){
 
     gulp.src(ampFile) //AMPページの作業
     .pipe(ejs({
-      jsonData: pages[i]
+      jsonData: pages[i], ampData: ampSchema[i]
     }))
     .pipe(rename(pages[i].name + '_amp.html'))
     .pipe(ampify(amp_output))　//ここでAMPファイルに置換
