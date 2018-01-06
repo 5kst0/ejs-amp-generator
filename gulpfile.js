@@ -35,3 +35,8 @@ gulp.task('ejs', function(){
     .pipe(gulp.dest(amp_output));
   }
 });
+gulp.task('default', ['ejs']);
+
+gulp.task('watch', ['ejs'], function(){
+  gulp.watch('./contents/**/*.ejs', ['ejs']);
+});
